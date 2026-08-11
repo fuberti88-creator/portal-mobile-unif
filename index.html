@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Portal do Aluno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TELA 1: LOGIN -->
+  <section id="loginScreen" class="screen login-screen">
+    <header class="login-top">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        <strong>UNIFAFIBE</strong><b>.com</b>
+      </div>
+      <button class="back-site">VOLTAR AO SITE</button>
+    </header>
+
+    <main class="login-content">
+      <p class="portal-label">Portal do aluno</p>
+      <h1>Entrar</h1>
+
+      <label for="ra">Usuário (RA)</label>
+      <input id="ra" type="text" placeholder="Digite seu RA" autocomplete="username">
+
+      <label for="nome">Nome</label>
+      <input id="nome" type="text" placeholder="Digite seu nome">
+
+      <label for="senha">Senha</label>
+      <div class="password-box">
+        <input id="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password">
+        <button type="button" class="eye" onclick="togglePassword()">◉</button>
+      </div>
+
+      <button class="orange-btn" onclick="openPeriodModal()">ENTRAR</button>
+
+      <div class="forgot">
+        <span>Esqueceu sua senha?</span>
+        <a href="#">REDEFINIR</a>
+      </div>
+    </main>
+
+    <footer class="login-footer">
+      © 2026 Estudo.com UNIFAFIBE - Todos os direitos reservados
+    </footer>
+  </section>
+
+  <!-- TELA 2: PORTAL -->
+  <section id="portalScreen" class="screen portal-screen hidden">
+    <header class="topbar">
+      <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+      <div class="logo portal-logo">
+        <span class="logo-mark"></span>
+        <strong>UNIFAFIBE</strong><b>.com</b>
+      </div>
+
+      <div class="top-icons">
+        <button>?</button>
+        <button>♧</button>
+        <button>⇥</button>
+      </div>
+    </header>
+
+    <main class="portal-content">
+      <div class="breadcrumb"><span>Início</span> / Período letivo</div>
+
+      <section class="portal-card">
+        <div class="card-title">
+          <span class="orange-icon">⚡</span>
+          <strong>Acesso rápido</strong>
+          <span class="chevron">⌄</span>
+        </div>
+        <p>Principais itens do portal</p>
+      </section>
+
+      <section class="portal-card">
+        <div class="card-title">
+          <span class="orange-icon">▣</span>
+          <strong>Seu dia</strong>
+          <span class="chevron">⌄</span>
+        </div>
+        <p>Segunda, 10 de agosto de 2026</p>
+      </section>
+
+      <section class="news">
+        <div class="card-title">
+          <span class="orange-icon">▤</span>
+          <strong>Novidades</strong>
+        </div>
+        <p class="news-subtitle">Acompanhe as novidades aqui</p>
+
+        <article class="notice-card">
+          <div class="notice-head">
+            <div class="notice-avatar">♙</div>
+            <div>
+              <strong>Comunicado</strong>
+              <small>10 de junho de 2026 às 08:00</small>
+            </div>
+            <div class="notice-actions">👥 🖐</div>
+          </div>
+
+          <h2>COMUNICADO<br>Rematrícula 2°<br>semestre/2026</h2>
+          <button class="orange-btn small">VER COMUNICADO</button>
+        </article>
+      </section>
+
+      <div id="toast" class="toast">Período letivo alterado</div>
+    </main>
+
+    <footer class="portal-footer">
+      © 2026 Estudo.com UNIFAFIBE - Todos os direitos reservados
+    </footer>
+  </section>
+
+  <!-- MENU LATERAL -->
+  <div id="overlay" class="overlay hidden" onclick="toggleMenu()"></div>
+
+  <aside id="sideMenu" class="side-menu">
+    <div class="profile">
+      <div class="profile-photo">●</div>
+      <div class="profile-text">
+        <strong>Olá, <b id="userName">Aluno</b>!</strong>
+        <span>Sistemas de Informação (Bacharela...</span>
+        <b>2022199074</b>
+      </div>
+      <span class="settings">⚙</span>
+    </div>
+
+    <div class="period-select">
+      <span id="currentPeriod">Período letivo - 2026/2</span>
+      <span>⌄</span>
+    </div>
+
+    <h3>EDUCACIONAL</h3>
+    <nav>
+      <a href="#" data-action="loader">♧ <span>Início</span></a>
+      <a href="#" data-action="agenda">▣ <span>Agenda de Atividades</span></a>
+      <a href="#" data-action="loader">♧ <span>Avisos</span></a>
+      <a href="#" data-action="loader">♧ <span>Avisos Coordenador</span></a>
+      <a href="#" data-action="loader">□ <span>Calendário Acadêmico</span></a>
+      <a href="#" data-action="loader">◉ <span>Certificados</span></a>
+      <a href="#" data-action="loader">▱ <span>Central de Estágio</span></a>
+      <a href="#" data-action="loader">♢ <span>CREDUC</span></a>
+      <a href="#" data-action="loader">▱ <span>Disciplinas digitais</span></a>
+      <a href="#" data-action="loader">□ <span>Documentos Faltantes</span></a>
+      <a href="#" data-action="loader">▣ <span>Editais</span></a>
+    </nav>
+
+    <h3>SERVIÇOS E UTILIDADES</h3>
+    <nav>
+      <a href="#">▱ <span>Histórico Escolar de Conclusão<br>antes de 2026</span></a>
+      <a href="#">♙ <span>Diploma e Histórico Digital</span></a>
+      <a href="#">♙ <span>Atividades Complementares e<br>de Extensão</span></a>
+      <a href="#">▦ <span>Biblioteca UNIFAFIBE</span></a>
+      <a href="#">▤ <span>Boletos</span></a>
+      <a href="#">▤ <span>Extrato Financeiro</span></a>
+      <a href="#">♧ <span>Gincana cidadã</span></a>
+      <a href="#">▦ <span>Manual do Aluno</span><em>↗</em></a>
+      <a href="#">▣ <span>Inscrição intercâmbio</span></a>
+      <a href="#">▣ <span>Matrículas de Dependência<br>Especial</span></a>
+      <a href="#">☑ <span>Portarias e Resoluções</span><em>⌄</em></a>
+      <a href="#">♙ <span>Secretaria Acadêmica</span></a>
+      <a href="#">⌁ <span>Wi-Fi UNIFAFIBE</span></a>
+      <a href="#">♙ <span>Solicitar<br>trancamento/desistência</span></a>
+    </nav>
+  </aside>
+
+
+  <!-- AGENDA DE ATIVIDADES -->
+  <div id="agendaOverlay" class="modal-overlay hidden">
+    <section class="agenda-panel">
+      <header class="agenda-header">
+        <button onclick="closeAgenda()">‹</button>
+        <div>
+          <strong>Agenda de Atividades</strong>
+          <small>Grade de aulas • 2026</small>
+        </div>
+      </header>
+
+      <div class="agenda-tabs">
+        <button class="agenda-tab active" onclick="changeWeek(0)">10 AGO</button>
+        <button class="agenda-tab" onclick="changeWeek(1)">11 AGO</button>
+        <button class="agenda-tab" onclick="changeWeek(2)">12 AGO</button>
+        <button class="agenda-tab" onclick="changeWeek(3)">13 AGO</button>
+        <button class="agenda-tab" onclick="changeWeek(4)">14 AGO</button>
+      </div>
+
+      <div class="agenda-day">
+        <div class="day-title">
+          <strong id="agendaDate">SEGUNDA-FEIRA • 10/08/2026</strong>
+          <span>2026</span>
+        </div>
+
+        <div class="class-card">
+          <div class="class-time">08:00<br><span>10:00</span></div>
+          <div class="class-line"></div>
+          <div class="class-info">
+            <strong>Sistemas de Informação</strong>
+            <span>Aula • Sala 12</span>
+            <small>Período letivo 2026</small>
+          </div>
+        </div>
+
+        <div class="class-card">
+          <div class="class-time">19:00<br><span>21:00</span></div>
+          <div class="class-line"></div>
+          <div class="class-info">
+            <strong>Atividade Acadêmica</strong>
+            <span>Aula • Laboratório</span>
+            <small>Período letivo 2026</small>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="loading-box">
+      <div class="spinner"></div>
+      <span>Carregando...</span>
+    </div>
+  </div>
+
+  <!-- MODAL DE PERÍODO -->
+  <<div id="periodOverlay" class="modal-overlay hidden">
+    <div class="period-modal">
+      <div class="modal-title">
+        <span>▣</span>
+        <strong>Período letivo</strong>
+      </div>
+
+      <p>Para acessar o conteúdo que deseja é<br>preciso selecionar o período letivo.</p>
+
+      <select id="periodSelect" onchange="selectPeriod(this)">
+        <option value="">Selecione o período letivo</option>
+        <option>Período letivo - 2026/1</option>
+        <option>Período letivo - 2026/2</option>
+        <option>Período letivo - 2025/2</option>
+        <option>Período letivo - 2025/1</option>
+        <option>Período letivo - 2024/2</option>
+        <option>Período letivo - 2024/1</option>
+        <option>Período letivo - 2023/2</option>
+        <option>Período letivo - 2023/1</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

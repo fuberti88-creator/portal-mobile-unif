@@ -1,0 +1,871 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --orange: #ff6500;
+  --dark: #292c45;
+  --text: #33343a;
+  --muted: #777;
+  --green: #198b5a;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--text);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.screen {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* LOGIN */
+.login-screen {
+  position: relative;
+  background: #fff;
+}
+
+.login-top {
+  height: 74px;
+  padding: 22px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: #222;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.logo strong {
+  font-weight: 800;
+}
+
+.logo b {
+  color: var(--orange);
+  font-size: 11px;
+  align-self: flex-end;
+  margin-left: 1px;
+  margin-bottom: -2px;
+}
+
+.logo-mark {
+  width: 21px;
+  height: 15px;
+  border: 1.7px solid #555;
+  margin-right: 5px;
+  position: relative;
+}
+
+.logo-mark:after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  bottom: -5px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--orange);
+}
+
+.back-site {
+  background: transparent;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.login-content {
+  width: calc(100% - 36px);
+  max-width: 330px;
+  margin: 50px auto 0;
+}
+
+.portal-label {
+  font-size: 9px;
+  color: #7d8290;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.login-content h1 {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.login-content label {
+  display: block;
+  font-size: 9px;
+  color: #555;
+  margin: 10px 0 5px;
+}
+
+.login-content input {
+  width: 100%;
+  height: 25px;
+  border: 1px solid #d5d7b0;
+  background: #f7ffaf;
+  border-radius: 2px;
+  padding: 0 8px;
+  font-size: 10px;
+  outline: none;
+}
+
+.login-content input::placeholder {
+  color: #555;
+}
+
+.password-box {
+  position: relative;
+}
+
+.password-box input {
+  padding-right: 42px;
+}
+
+.eye {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 25px;
+  border-radius: 4px;
+  background: #327ce2;
+  color: #fff;
+  font-size: 13px;
+}
+
+.orange-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  color: #fff;
+  background: var(--orange);
+  border-radius: 2px;
+  font-size: 9px;
+  font-weight: 800;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.forgot {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 10px;
+  color: #555;
+}
+
+.forgot a {
+  color: var(--orange);
+  font-size: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 12px;
+}
+
+.login-footer {
+  position: absolute;
+  bottom: 27px;
+  width: 100%;
+  padding: 0 25px;
+  text-align: center;
+  color: #888;
+  font-size: 9px;
+  line-height: 15px;
+}
+
+/* PORTAL */
+.portal-screen {
+  background: #fafafa;
+}
+
+.topbar {
+  height: 64px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-button {
+  width: 30px;
+  background: transparent;
+  color: var(--orange);
+  font-size: 18px;
+}
+
+.portal-logo {
+  flex: 1;
+}
+
+.top-icons {
+  display: flex;
+  gap: 11px;
+}
+
+.top-icons button {
+  background: transparent;
+  color: #777;
+  font-size: 13px;
+}
+
+.portal-content {
+  padding: 7px 8px 90px;
+}
+
+.breadcrumb {
+  background: #f2f2f2;
+  height: 25px;
+  padding: 7px 8px;
+  color: #888;
+  font-size: 8px;
+  margin-bottom: 8px;
+}
+
+.breadcrumb span {
+  color: var(--orange);
+}
+
+.portal-card,
+.news {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  margin-bottom: 9px;
+  padding: 9px 10px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.orange-icon {
+  color: var(--orange);
+  margin-right: 7px;
+  font-size: 15px;
+}
+
+.card-title strong {
+  font-size: 13px;
+}
+
+.chevron {
+  margin-left: auto;
+  color: #777;
+}
+
+.portal-card p,
+.news-subtitle {
+  font-size: 9px;
+  color: #888;
+  margin-top: 3px;
+}
+
+.notice-card {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  min-height: 158px;
+  margin-top: 9px;
+  padding: 10px;
+  background: #fff;
+}
+
+.notice-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notice-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f7f7f7;
+  display: grid;
+  place-items: center;
+  color: #bbb;
+  font-size: 12px;
+}
+
+.notice-head strong {
+  display: block;
+  font-size: 10px;
+}
+
+.notice-head small {
+  display: block;
+  font-size: 7px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.notice-actions {
+  margin-left: auto;
+  background: #2678e9;
+  color: white;
+  padding: 4px 5px;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.notice-card h2 {
+  font-size: 14px;
+  line-height: 15px;
+  margin: 24px 0 16px 38px;
+  font-weight: 900;
+}
+
+.orange-btn.small {
+  display: block;
+  margin: 0 auto;
+  padding: 6px 8px;
+  font-size: 8px;
+}
+
+.toast {
+  margin: 18px 0 0;
+  background: var(--green);
+  color: #fff;
+  border-radius: 2px;
+  padding: 12px 8px;
+  font-size: 9px;
+  box-shadow: 0 3px 7px rgba(0,0,0,.15);
+}
+
+.portal-footer {
+  text-align: center;
+  color: #888;
+  font-size: 9px;
+  line-height: 13px;
+  padding: 10px 30px 25px;
+}
+
+/* MENU LATERAL */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 20;
+}
+
+.side-menu {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: -310px;
+  width: 285px;
+  max-width: 78vw;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--dark);
+  color: #fff;
+  padding: 13px 10px 30px;
+  transition: left .22s ease;
+  box-shadow: 4px 0 15px rgba(0,0,0,.2);
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 3px 10px;
+}
+
+.profile-photo {
+  width: 39px;
+  height: 39px;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  background: #f5f5f5;
+  color: #bbb;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.profile-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.profile-text strong,
+.profile-text span,
+.profile-text b {
+  display: block;
+}
+
+.profile-text strong {
+  font-size: 11px;
+}
+
+.profile-text strong #userName {
+  display: inline;
+  font-size: inherit;
+  color: inherit;
+}
+
+.profile-text strong {
+  font-size: 11px;
+}
+
+.profile-text span {
+  font-size: 7px;
+  color: #c6c7d1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile-text b:not(#userName) {
+  color: var(--orange);
+  font-size: 9px;
+  margin-top: 2px;
+}
+
+.settings {
+  color: var(--orange);
+  font-size: 12px;
+}
+
+.period-select {
+  background: #77798a;
+  border-radius: 2px;
+  padding: 7px 9px;
+  font-size: 9px;
+  margin: 0 3px 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.side-menu h3 {
+  font-size: 8px;
+  letter-spacing: .4px;
+  margin: 10px 3px 6px;
+}
+
+.side-menu nav a {
+  min-height: 27px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d5d5df;
+  text-decoration: none;
+  font-size: 9px;
+  padding: 4px 3px;
+  border-radius: 2px;
+}
+
+.side-menu nav a span {
+  flex: 1;
+}
+
+.side-menu nav a em {
+  font-style: normal;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  background: rgba(0,0,0,.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+.period-modal {
+  width: 100%;
+  max-width: 226px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 12px 9px 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.2);
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.modal-title span {
+  color: var(--orange);
+  font-size: 15px;
+}
+
+.period-modal p {
+  font-size: 9px;
+  line-height: 12px;
+  color: #888;
+  margin: 4px 0 9px;
+}
+
+.period-modal select {
+  width: 100%;
+  height: 26px;
+  border: 1px solid #a8c5f2;
+  background: white;
+  border-radius: 2px;
+  padding: 0 7px;
+  font-size: 9px;
+  color: #333;
+  outline: none;
+}
+
+@media (min-width: 600px) {
+  body {
+    background: #eee;
+  }
+
+  .screen {
+    width: 390px;
+    margin: 0 auto;
+    min-height: 844px;
+    box-shadow: 0 0 15px rgba(0,0,0,.12);
+  }
+}
+
+
+/* CARREGAMENTO */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(41,44,69,.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-box {
+  width: 105px;
+  padding: 13px 8px;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+
+.loading-box span {
+  color: #555;
+  font-size: 9px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #e8e8e8;
+  border-top-color: var(--orange);
+  border-radius: 50%;
+  animation: spin .75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* AGENDA */
+.agenda-panel {
+  width: 100%;
+  max-width: 390px;
+  height: 100%;
+  background: #fafafa;
+  overflow-y: auto;
+}
+
+.agenda-header {
+  height: 64px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.agenda-header button {
+  background: transparent;
+  color: var(--orange);
+  font-size: 27px;
+  line-height: 1;
+}
+
+.agenda-header strong,
+.agenda-header small {
+  display: block;
+}
+
+.agenda-header strong {
+  font-size: 13px;
+}
+
+.agenda-header small {
+  color: #888;
+  font-size: 8px;
+  margin-top: 3px;
+}
+
+.agenda-tabs {
+  display: flex;
+  gap: 5px;
+  padding: 9px 8px;
+  background: #fff;
+  overflow-x: auto;
+}
+
+.agenda-tab {
+  min-width: 58px;
+  padding: 7px 4px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  color: #777;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.agenda-tab.active {
+  background: var(--orange);
+  color: #fff;
+}
+
+.agenda-day {
+  padding: 10px 8px;
+}
+
+.day-title {
+  background: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.day-title strong {
+  font-size: 9px;
+}
+
+.day-title span {
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.class-card {
+  margin-top: 8px;
+  background: #fff;
+  border-radius: 5px;
+  min-height: 76px;
+  padding: 10px 8px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.class-time {
+  width: 47px;
+  text-align: center;
+  color: var(--orange);
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 13px;
+  padding-top: 4px;
+}
+
+.class-time span {
+  color: #888;
+  font-weight: 500;
+}
+
+.class-line {
+  width: 2px;
+  background: #ffb27d;
+  margin: 1px 9px;
+  border-radius: 2px;
+}
+
+.class-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.class-info strong {
+  font-size: 10px;
+}
+
+.class-info span,
+.class-info small {
+  font-size: 8px;
+  color: #888;
+}
+
+@media (min-width: 600px) {
+  .agenda-panel {
+    min-height: 844px;
+  }
+}
+
+/* =========================================
+   AJUSTES PARA IPHONE / SAFARI
+   ========================================= */
+
+/* Evita problemas com notch e Dynamic Island */
+body {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Usa a altura real disponível no Safari */
+.screen {
+  min-height: 100dvh;
+}
+
+/* LOGIN */
+.login-screen {
+  min-height: 100dvh;
+}
+
+.login-content {
+  width: calc(100% - 36px);
+  max-width: 330px;
+}
+
+/* Evita o Safari aumentar o zoom quando o usuário toca nos campos */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+/* Mantém o texto visualmente pequeno nos campos */
+.login-content input {
+  font-size: 10px;
+}
+
+/* Botões mais fáceis de tocar no iPhone */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* MENU LATERAL */
+.side-menu {
+  height: 100dvh;
+  padding-top: calc(13px + env(safe-area-inset-top));
+  padding-bottom: calc(30px + env(safe-area-inset-bottom));
+}
+
+/* CONTEÚDO PRINCIPAL */
+.portal-screen {
+  min-height: 100dvh;
+}
+
+.portal-content {
+  padding-bottom: calc(90px + env(safe-area-inset-bottom));
+}
+
+/* AGENDA */
+.agenda-panel {
+  height: 100dvh;
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* MODAIS */
+.modal-overlay {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Mantém o layout sem estourar a largura do iPhone */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+/* Melhora o comportamento do toque no iPhone */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iPhones menores */
+@media screen and (max-width: 375px) {
+
+  .login-content {
+    margin-top: 35px;
+  }
+
+  .login-content h1 {
+    font-size: 21px;
+  }
+
+  .side-menu {
+    width: 280px;
+  }
+
+  .portal-content {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+}
+
+/* iPhones maiores */
+@media screen and (min-width: 390px) {
+
+  .login-content {
+    max-width: 340px;
+  }
+
+  .portal-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
